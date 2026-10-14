@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Understand legal rights and find legal aid in India.">
+  <title>Nyaya Saathi AI | Legal Help for Everyone</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="header">
+    <div class="brand">⚖️ Nyaya Saathi AI</div>
+    <p>Understand your rights. Discover your next step.</p>
+  </header>
+
+  <main>
+    <section class="card hero-card">
+      <h1>How can we help you?</h1>
+      <p>Get started with general legal information and useful next steps.</p>
+
+      <form id="legalForm">
+        <label for="language">Choose language</label>
+        <select id="language" name="language">
+          <option value="en">English</option>
+          <option value="hi">Hindi</option>
+          <option value="mr">Marathi</option>
+        </select>
+
+        <label for="category">Legal concern</label>
+        <select id="category" name="category">
+          <option value="work">Workplace and salary issues</option>
+          <option value="women">Women's rights and safety</option>
+          <option value="documents">Understanding legal documents</option>
+          <option value="other">Other legal questions</option>
+        </select>
+
+        <label for="question">Describe your question</label>
+        <textarea
+          id="question"
+          name="question"
+          placeholder="Describe your concern without names, addresses, phone numbers or confidential information."
+          required
+        ></textarea>
+
+        <button type="submit">Explore next steps</button>
+      </form>
+
+      <section id="result" class="result" aria-live="polite" hidden>
+        <h2>Suggested next steps</h2>
+        <p id="answer"></p>
+        <p id="disclaimer" class="small"></p>
+      </section>
+    </section>
+
+    <section class="card property-guide" aria-labelledby="property-guide-title">
+      <p class="guide-kicker">CASE GUIDE · INDIA</p>
+      <h2 id="property-guide-title">Buying a home or property</h2>
+      <p>Use this general checklist to prepare for a purchase. Documents differ for resale and builder properties, and requirements vary by state and property type.</p>
+
+      <label for="propertyType">What type of property are you buying?</label>
+      <select id="propertyType" name="propertyType">
+        <option value="resale">Resale property</option>
+        <option value="builder">New property from a builder</option>
+      </select>
+
+      <h3>Documents to check</h3>
+      <p class="guide-hint">Tick items as you collect or verify them. Ask an independent property lawyer to review the originals and local records before paying a substantial amount or signing.</p>
+      <ul id="propertyDocuments" class="checklist" aria-live="polite"></ul>
+
+      <h3>Typical steps</h3>
+      <ol class="process-list">
+        <li><strong>Confirm the details.</strong> Identify the exact property, seller, total price, payment schedule, included fixtures and any promised handover date. Budget for applicable taxes, stamp duty, registration and professional fees.</li>
+        <li><strong>Verify title and authority to sell.</strong> Have an independent property lawyer review the title chain, the seller's ownership and authority, and relevant local land or registration records. Check for mortgages, liens, disputes, unpaid dues and restrictions. An encumbrance search alone does not establish clear title.</li>
+        <li><strong>Check approvals and the property itself.</strong> Confirm the land use and applicable building, layout and occupancy approvals with the relevant local authorities. Inspect the property and verify its area and boundaries against the records.</li>
+        <li><strong>Check project registration where applicable.</strong> For a covered project, look up its registration and disclosures on the state RERA authority's official website. Confirm which rules apply to this project and transaction.</li>
+        <li><strong>Agree terms in writing.</strong> Get the sale agreement reviewed before signing or paying. It should accurately record the parties, property, price, payment milestones, possession, included items and consequences if obligations are not met.</li>
+        <li><strong>Complete the transfer.</strong> Arrange payment through traceable methods. Pay the applicable stamp duty and register the sale deed with the appropriate Sub-Registrar, following state requirements. Obtain the registered deed and payment receipts.</li>
+        <li><strong>After registration.</strong> Take possession against a written handover record, collect keys and original documents due to you, transfer utilities where applicable, and apply to update relevant municipal or land records. Mutation or a tax-record update is not by itself proof of ownership.</li>
+      </ol>
+
+      <aside class="guide-caution">
+        <strong>Before you pay or sign:</strong> Do not rely only on photocopies, a broker's assurances, a bank loan approval or a builder's marketing material as proof of clear title. Ask a qualified local property lawyer to review the particular transaction.
+      </aside>
+    </section>
+
+    <section class="card lawyer-module" aria-labelledby="lawyer-module-title">
+      <p class="guide-kicker">LAWYER DIRECTORY · DEMO</p>
+      <h2 id="lawyer-module-title">Find and consult a lawyer</h2>
+      <p>Browse lawyer profiles or add a profile to try the connection flow. Profiles and consultation requests are stored only in this browser; they are not published to other people, verified, or sent to a lawyer.</p>
+
+      <aside class="guide-caution">
+        <strong>Prototype only:</strong> Use fictional details while testing. Do not enter real contact details or confidential case information. This page cannot verify a lawyer's credentials or deliver consultation requests.
+      </aside>
+
+      <h3>Browse profiles</h3>
+      <div class="directory-filters">
+        <div>
+          <label for="lawyerAreaFilter">Practice area</label>
+          <select id="lawyerAreaFilter">
+            <option value="">All practice areas</option>
+            <option value="Property">Property</option>
+            <option value="Family">Family</option>
+            <option value="Employment">Employment</option>
+            <option value="Consumer">Consumer</option>
+            <option value="Criminal">Criminal</option>
+            <option value="Business">Business</option>
+          </select>
+        </div>
+        <div>
+          <label for="lawyerCityFilter">City</label>
+          <input id="lawyerCityFilter" type="search" placeholder="Filter by city">
+        </div>
+      </div>
+      <div id="lawyerDirectory" class="lawyer-directory" aria-live="polite"></div>
+
+      <details class="lawyer-add">
+        <summary>Add a lawyer profile (local demo)</summary>
+        <form id="lawyerForm">
+          <div class="directory-filters">
+            <div>
+              <label for="lawyerName">Name</label>
+              <input id="lawyerName" name="name" maxlength="100" autocomplete="off" required>
+            </div>
+            <div>
+              <label for="lawyerEnrollment">Bar Council enrollment number</label>
+              <input id="lawyerEnrollment" name="enrollment" maxlength="80" autocomplete="off" required>
+            </div>
+            <div>
+              <label for="lawyerState">State / Bar Council</label>
+              <input id="lawyerState" name="state" maxlength="80" autocomplete="off" required>
+            </div>
+            <div>
+              <label for="lawyerCity">City</label>
+              <input id="lawyerCity" name="city" maxlength="80" autocomplete="off" required>
+            </div>
+            <div>
+              <label for="lawyerAreas">Practice areas</label>
+              <select id="lawyerAreas" name="areas" required>
+                <option value="">Choose an area</option>
+                <option>Property</option>
+                <option>Family</option>
+                <option>Employment</option>
+                <option>Consumer</option>
+                <option>Criminal</option>
+                <option>Business</option>
+              </select>
+            </div>
+            <div>
+              <label for="lawyerLanguages">Languages</label>
+              <input id="lawyerLanguages" name="languages" maxlength="100" placeholder="e.g. English, Hindi" autocomplete="off" required>
+            </div>
+            <div>
+              <label for="lawyerExperience">Years in practice</label>
+              <input id="lawyerExperience" name="experience" type="number" min="0" max="70" required>
+            </div>
+            <div>
+              <label for="lawyerConsultation">Consultation fee (INR, optional)</label>
+              <input id="lawyerConsultation" name="fee" type="number" min="0" max="1000000">
+            </div>
+          </div>
+          <label class="consent-row">
+            <input id="lawyerConsent" type="checkbox" required>
+            <span>I have permission to add these details and understand this demo profile is not verified or shared with other visitors.</span>
+          </label>
+          <button type="submit">Add demo profile</button>
+        </form>
+      </details>
+
+      <section id="consultationPanel" class="consultation-panel" aria-labelledby="consultation-title" hidden>
+        <h3 id="consultation-title">Request a consultation</h3>
+        <p id="selectedLawyer" class="guide-hint"></p>
+        <form id="consultationForm">
+          <input id="consultationLawyerId" name="lawyerId" type="hidden">
+          <label for="clientName">Your name</label>
+          <input id="clientName" name="name" maxlength="100" autocomplete="off" required>
+          <label for="clientContact">Email or phone (demo only)</label>
+          <input id="clientContact" name="contact" maxlength="120" autocomplete="off" required>
+          <label for="consultationMessage">Brief reason for consultation</label>
+          <textarea id="consultationMessage" name="message" maxlength="500" placeholder="Do not include names of other people, case numbers, addresses, or confidential facts." required></textarea>
+          <label class="consent-row">
+            <input id="consultationConsent" type="checkbox" required>
+            <span>I understand this request is saved only in this browser and will not reach the lawyer.</span>
+          </label>
+          <button type="submit">Save demo request</button>
+        </form>
+      </section>
+
+      <p id="lawyerStatus" class="small" role="status" aria-live="polite"></p>
+    </section>
+
+    <section class="card">
+      <h2>Find official legal help</h2>
+      <p>Eligible people may access free legal services through India's legal services authorities.</p>
+      <p><a href="https://nalsa.gov.in/" target="_blank" rel="noopener noreferrer">National Legal Services Authority</a></p>
+      <p><a href="https://maharashtra.nalsa.gov.in/" target="_blank" rel="noopener noreferrer">Maharashtra legal services</a></p>
+      <p>National legal-aid helpline: <strong>15100</strong></p>
+    </section>
+
+    <section class="notice">
+      <strong>Important:</strong> This prototype provides general information, not personalised legal advice. It is not an emergency service. Contact emergency services if you face immediate danger.
+    </section>
+  </main>
+
+  <footer>
+    <p>Nyaya Saathi AI · Early prototype</p>
+  </footer>
+</body>
+</html>
